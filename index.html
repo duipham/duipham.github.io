@@ -4,61 +4,289 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button</title>
+    <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
+    <title>Github</title>
+    <noscript><strong>Sorry, please enable JS to continue!</strong></noscript>
+    <link rel="apple-touch-icon" sizes="180x180" href="./image/apple-touch-icon.png">
+    <link rel="shortcut-icons" type="image/png" sizes="32x32" href="./image/favicon-32x32.png">
+    <link rel="shortcut-icons" type="image/png" sizes="16x16" href="./image/favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/d96ee44add.js" crossorigin="anonymous"></script>
 </head>
-<body style="background-color: darkgray;">
-    <div id="border">
-        👇👇👇<br>
-    <!-- <input type="button" onclick="alert('Hehe')" value="Click Me"/> -->
-    <input type="button" id="clickme" value="Chạm vào em đi :D !"/>
-</div>
-</body>
+
+<body>
+    <!-- https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
+    <button onclick="topFunction()" id="btnToTop" title="Top"><i class="fa-solid fa-angle-up"></i></button>
+
+    <div>
+        <span id="directToCodeDao">
+            <i class="fa-solid fa-house fa-fw" title="Home"></i>
+        </span>
+        
+        <span id="buttonClickShowMenuChoose" onclick="barList()">
+            <!-- https://stackoverflow.com/questions/17561093/how-to-show-and-hide-a-simple-ol-list-with-onclick -->
+            <i class="fa-solid fa-bars fa-fw" title="This Manga :"></i>
+        </span>
+        <ul id="all_List_Chapter" style="list-style-type: none;">
+            <li><button id="readFromIntern">Read from Chap 1</button></li>
+            <li><button id="read-newest">Read Newest</button></li>
+            <li><button id="read-continue">Read Coninue</button></li>
+        </ul>
+    </div>
+
+    <div class="whatManga">
+        <h4>One Punch Man</h4>
+        <img src="/image/imageManga.jpg" alt="one punch man">
+    </div>
+
+        <div class="dropup">
+            <button class="drop-btn">Move here to choose the chapter</button>
+                <div class="dropup-content">
+                    <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropup_hover -->
+                    <a href="http://www.nettruyenco.com/truyen-tranh/anh-hung-onepunch/chap-1/80034">Chapter 1</a>
+                    <a href="http://www.nettruyenco.com/truyen-tranh/anh-hung-onepunch/chap-2/80035">Chapter 2</a>
+                    <a href="http://www.nettruyenco.com/truyen-tranh/anh-hung-onepunch/chap-3/80036">Chapter 3</a>
+                </div>
+        </div>
+
+            <span id="back-button" style="color: gray;"><i class="fa-solid fa-arrow-left fa-fw" title="Back"></i></span>
+
+            <span id="next-chap-btn" style="background-color: chartreuse"><i class="fa-solid fa-arrow-right fa-fw" title="Next Chapter"></i></span>
+                
+            <!-- https://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page -->
+            <span id="download"><i class="fa-solid fa-download fa-fw" title="Download"></i></span>
+                
+            <span id="reloadWeb"><i class="fa-solid fa-arrows-rotate fa-fw" title="Refresh"></i></span>
+            
+            <span id="reportWeb"><i class="fa-solid fa-info fa-fw" title="Report"></i></span>
+
+            <span id="close" style="background-color:RED"><i class="fa-solid fa-window-close fa-fw" aria-hidden="true" title="Close"></i></span>
+    </div>
+        <div class="pictureChap1">
+            <img src="./image1.png" alt="Image">
+            <img src="./image2.png" alt="Image">
+            <img src="./image3.png" alt="Image">
+            <img src="./image4.png" alt="Image">
+            <img src="./image5.png" alt="Image">
+            <img src="./image6.png" alt="Image">
+            <img src="./image7.png" alt="Image">
+            <img src="./image8.png" alt="Image">
+            <img src="./image9.png" alt="Image">
+            <img src="./image10.png" alt="Image">
+            <img src="./image11.png" alt="">
+            <img src="./image12.png" alt="">
+            <img src="./13.png" alt="">
+            <img src="./14.png" alt="">
+            <img src="./15.png" alt="">
+            <img src="./16.png" alt="">
+            <img src="./17.png" alt="">
+        </div>
+        
+    </body>
+    <footer>
+        <div id="borderFooter">
+            <button id="linkMyFB">About Us!</button>
+        </div>
+    </footer>
 </html>
+
 <style>
-    #clickme{
-        color: black;
-        font-size: 32px;
-        font-family: 'Courier New', Courier, monospace;
-        background-color: chartreuse;
-        border: 10px solid yellow;
-        border-radius: 30px;
+
+    body{
+        background-color: aqua;
     }
-    #border{
     
-        /* Center */
-        /* FlexBox
-        display: flex;
-        align-items: center;
-        justify-content: center; */
-
-        /* Grid */
-        display: grid;
-        place-items: center;
-
-        /* position: absolute;
-        left : 30%;
-        transform: translateX(30%); */
-        /* top : 30%;
-        transform: translateY(30%); */
+    /*  https://stackoverflow.com/questions/9441185/making-ul-styled-buttons-the-same-same-size */
+    .pictureChap1 img{
+        /* https://www.w3schools.com/howto/howto_css_image_center.asp */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
     }
-</style>
-<script type="text/javascript">
-var button = document.getElementById('clickme');   
-// Lấy element có id=clickme lưu vào biến button
-button.addEventListener('click', function(){
-    // Khi click vào element chứa trong button thì thực hiện một function, 
-    let ngu = confirm("💬 Ban co NGU ko? 💬");
-    // Do not overuse method "confirm". It prevents the user from accessing other parts of the page until the box is closed.
-    {
-        if (ngu == true) {
-            alert("Loại này chúng tôi từ chối nhận!🤚🤚🤚\nMời người đi chỗ khác👉👉👉");
-        }
-        else{
-        alert('Ok!Tốt👍\nCó triển vọng làm con trai ta!');
+
+    #all_List_Chapter #readFromIntern, #read-newest, #read-continue{
+        cursor: pointer;
+        color: blue;
+    }
+
+    .whatManga h4{
+        color: brown;
+        position:relative;
+        transform: translateY(20px);
+    }
+    .whatManga img{
+        width: 150px;
+        height: 200px;
+    }
+
+    #borderFooter #linkMyFB{
+        color: blue; 
+        left:50%;
+        border: 5px solid green;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    /* Icon from font awesome */
+    span{
+        border: 1px solid silver; border-radius: 0.25em; padding: 0.5em;background-color: beige;
+        cursor: pointer;
+    }
+
+    #all_List_Chapter{
+        color: crimson;
+        margin: 20px;
+        list-style-position: inside;
+        padding-left: 15px;
+        font-size: 18px;
+    }
+
+    #all_List_Chapter h4{
+        color: blue; border: 3px solid red;
+        border-radius:100px;position: relative;padding: 1px;margin: 1px;
+        float: left;
+    }
+
+    #borderFooter{
+        background-color: black;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Drop Up menu*/
+    .drop-btn{
+        color: chocolate;
+        border-radius: 5px;
+        font-family:'Courier New', Courier, monospace ;
+        font-family: 20px;
+        border:5px solid blue;
+    }
+    .dropup {
+        display: inline-block;
+        position: relative;
+    }
+    .dropup-content {
+        display: none;       
+        position: absolute;
+        max-width: 80px;
+        bottom: 27px;
+        background-color: cornflowerblue;
+    }
+
+    .dropup-content a:hover {background-color: antiquewhite}
+
+    .dropup:hover .dropup-content {
+        display: block;
+    }
+
+    .dropup:hover .drop-btn {
+        background-color: gray;
+    }
+
+    /* Back To Top */
+    #btnToTop{
+        /* display: none; Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 7px; /* Place the button at the bottom of the page */
+        right: 10px; /* 10px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: 1px solid blue; /* Remove borders */
+        outline: 6px; /* Remove outline */
+        background-color:brown ;
+        border-radius: 50%;
+        color: blue;
+        display: inline;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    #btnToTop:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+
+</style> 
+
+
+
+<script>
+    document.getElementById("directToCodeDao").onclick = function(){
+        location.href = 'https://300baicode.com/?fbclid=IwAR3fwd5NBGeLE80c5a60P8BIm7APK8rU0MyA70ptYIlu8O-3s8295lsRctc';
+    };
+
+    document.getElementById("read-continue").onclick = function(){
+        alert("No read to continue");
+    }
+
+    document.getElementById("back-button").onclick = function(){
+        alert("Làm nồi gì đã đọc gì mà back ? :D")
+    }
+
+    document.getElementById("read-newest").onclick = function(){
+        location.href = 'http://www.nettruyenco.com/truyen-tranh/anh-hung-onepunch/chap-214/874543';
+    };
+    document.getElementById("next-chap-btn").onclick = function(){
+        location.href = 'http://www.nettruyenco.com/truyen-tranh/anh-hung-onepunch/chap-2/80035';
+    };
+    
+    document.getElementById("readFromIntern").onclick = function(){
+        location.href = 'http://www.nettruyenco.com/truyen-tranh/anh-hung-onepunch/chap-1/80034';
+    };
+
+    document.getElementById("download").onclick = function(){
+        alert("Chưa thể download tạp truyện này vì vấn đề bản quyền! \n🥺👉👈");
+        window.location="https://duipham.github.io/";
+    };
+
+    document.getElementById("reloadWeb").onclick = function(){
+        window.location.reload();
+        // https://stackoverflow.com/questions/5611119/how-to-make-a-refresh-button-using-javascript
+    }
+
+    document.getElementById("reportWeb").onclick = function(){
+        location.href = 'https://github.com/duipham';;
+    }
+
+    document.getElementById("close").onclick = function(){
+        let outWeb = confirm("Bạn muốn thoát khỏi website?");
+        if(outWeb == true) {
+            alert("Truyện đọc dở sẽ ko đc lưu vì chưa đủ kinh phí mua database🥴🥴🥴 + lười rồi🥱🥱🥱!");
+            window.location="http://google.com";        
+        } else{
+            alert("Oh, đọc tiếp thôi :D");
         }
     };
-    // bên trong function thông báo lên = confirm.
-});
-// console.log(ngu); // ngu is not defined!
 
+    function barList() {
+    var list = document.getElementById("all_List_Chapter");
+    if (list.style.display == "none"){
+        list.style.display = "block";
+    }else{
+        list.style.display = "none";
+    };}
+
+    document.getElementById("linkMyFB").onclick = function(){
+        location.href = 'https://www.facebook.com/profile.php?id=100025956435030';
+    };
+
+    // var backToTop = document.getElementById("btnToTop");
+    // 20px from top ==> show btn
+
+    // window.onscroll = function(){
+    //     scrollFunction()
+    // };
+    // function scrollFunction(){
+    //     if(document.body.scrollTop > 20 || document.    documentElement.scrollTop > 20) {
+    //         backToTop.style.display = "block";
+    //     } else {
+    //         backToTop.style.display = "none";
+    //     }
+    // };
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, Opera
+}
 </script>
